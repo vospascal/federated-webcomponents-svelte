@@ -59,6 +59,7 @@ module.exports = {
             name: "consumer-svelte",
             filename: "remoteEntry.js",
             remotes: {
+                wcheader: "wcheader@http://localhost:3002/remoteEntry.js",
                 header: "header@http://localhost:3001/remoteEntry.js",
             },
             exposes: {},

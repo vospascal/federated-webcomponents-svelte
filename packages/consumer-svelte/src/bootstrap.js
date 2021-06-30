@@ -8,7 +8,7 @@ window.header.get("./Header").then((module) => {
 });
 
 const app = new App({
-  target: document.getElementById("app"),
+  target: document.getElementById("root"),
 });
 
 window.app = app;

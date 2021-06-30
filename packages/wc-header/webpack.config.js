@@ -38,31 +38,45 @@ module.exports = {
             //Allows use of svelte
             {
                 test: /\.svelte$/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'svelte-loader',
                     options: {
-                        preprocess: SveltePreprocess({
-                            typescript: {
-                                tsconfigFile: "tsconfig.json",
-                            },
-                            babel: {
-                                presets: [
-                                    [
-                                        '@babel/preset-env',
-                                        {
-                                            loose: true,
-                                            modules: false,
-                                            targets: {
-                                                esmodules: true,
-                                            },
-                                        },
-                                    ],
-                                ],
-                            },
-                        }),
+                        compilerOptions: {
+                            customElement: true,
+                            tag: null
+                        }
                     }
-                },
+                }
             },
+            // {
+            //     test: /\.svelte$/,
+            //     use: {
+            //         loader: 'svelte-loader',
+            //         options: {
+            //             customElement: true,
+            //             preprocess: SveltePreprocess({
+            //                 typescript: {
+            //                     tsconfigFile: "tsconfig.json",
+            //                 },
+            //                 babel: {
+            //                     presets: [
+            //                         [
+            //                             '@babel/preset-env',
+            //                             {
+            //                                 loose: true,
+            //                                 modules: false,
+            //                                 targets: {
+            //                                     esmodules: true,
+            //                                 },
+            //                             },
+            //                         ],
+            //                     ],
+            //                 },
+            //             }),
+            //         }
+            //     },
+            // },
             //Allows use of CSS
             {
                 test: /\.css$/,
@@ -73,15 +87,6 @@ module.exports = {
                 test: /\.(jpg|jpeg|png|svg)$/,
                 use: 'file-loader',
             },
-            {
-                test: /\.svelte$/,
-                exclude: /node_modules/,
-                loader: "string-replace-loader",
-                options: {
-                    search: /^\s*\<svelte\:options tag\=[^>]+\>/,
-                    replace: ""
-                }
-            }
         ],
     },
 
@@ -93,15 +98,9 @@ module.exports = {
             filename: "remoteEntry.js",
             remotes: {},
             exposes: {
-                "./wcHeader": "./src/Header.svelte",
+                "./wcheader": "./src/Header.svelte",
             },
-            shared: {
-                ...deps,
-                svelte: {
-                    singleton: true,
-                    requiredVersion: deps["svelte"],
-                },
-            },
+            shared: {},
         }),
         new HtmlWebpackPlugin({
             template: "./public/index.html",

@@ -17,3 +17,31 @@ used injector code from -> `https://github.com/react-boilerplate/redux-injectors
 
 ###problems
 - https://github.com/supasate/connected-react-router doesnt support history v5 yet
+
+
+
+Button.svelte
+<script>
+    export let theme;
+</script>
+
+<style>
+  button[theme="primary"] {
+    background: tomato;
+  }
+
+  button[theme="text"] {
+    background: blue;
+  }
+</style>
+
+<button theme={theme}>Button</button>
+
+
+App.svelte
+<script>
+    import Button from "./Button.svelte";
+</script>
+
+<Button theme="primary" />
+<Button theme="text" />

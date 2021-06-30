@@ -1,4 +1,4 @@
-<svelte:options tag="my-header">
+<svelte:options tag="my-header" />
 
 <script>
   let count = 0;
