@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+// const SveltePreprocess = require("svelte-preprocess");
 
 const deps = require("./package.json").dependencies;
 module.exports = {
@@ -21,7 +22,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [".jsx", ".js", ".json", '.svelte', '.mjs', ],
+        extensions: [".jsx", ".js", ".json", '.svelte', '.mjs',],
     },
 
     module: {
@@ -37,9 +38,16 @@ module.exports = {
             //Allows use of svelte
             {
                 test: /\.svelte$/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'svelte-loader',
-                },
+                    options: {
+                        compilerOptions: {
+                            customElement: false,
+                            tag: null
+                        }
+                    }
+                }
             },
             //Allows use of CSS
             {
@@ -59,12 +67,15 @@ module.exports = {
             name: "consumer-svelte",
             filename: "remoteEntry.js",
             remotes: {
-                wcheader: "wcheader@http://localhost:3002/remoteEntry.js",
-                header: "header@http://localhost:3001/remoteEntry.js",
+                mywc: "mywc@http://localhost:3002/remoteEntry.js",
             },
             exposes: {},
             shared: {
-                ...deps,
+                // ...deps,
+                // svelte: {
+                //     singleton: true,
+                //     requiredVersion: deps["svelte"],
+                // },
             },
         }),
         new HtmlWebpackPlugin({
@@ -72,7 +83,9 @@ module.exports = {
             // chunks: ["main"],
         }),
         //This gets all our css and put in a unique file
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+        }),
         //take our environment variable in .env file
         //And it does a text replace in the resulting bundle for any instances of process.env.
         new Dotenv(),

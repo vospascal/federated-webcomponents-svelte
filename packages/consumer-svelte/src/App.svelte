@@ -1,9 +1,7 @@
 <script>
-  const onClick = () => {
-    window.addToCart();
-  }
+  window['mywc'].get("./my-header").then((module) => module().default);
+  window['mywc'].get("./my-footer").then((module) => module().default);
 </script>
-<div>This is the consumer</div>
-<button on:click={onClick}>
-  Add to cart!
-</button>
+<my-header></my-header>
+<my-footer></my-footer>
+

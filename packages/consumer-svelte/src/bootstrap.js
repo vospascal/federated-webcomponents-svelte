@@ -1,14 +1,9 @@
 import App from "./App.svelte";
 
-window.header.get("./Header").then((module) => {
-  const Header = module().default;
-  new Header({
-    target: document.getElementById("header"),
-  });
-});
+// window.wcheader.get("./wcheader").then((module) => module().default);
 
 const app = new App({
-  target: document.getElementById("root"),
+  target: document.getElementById("app"),
 });
 
 window.app = app;

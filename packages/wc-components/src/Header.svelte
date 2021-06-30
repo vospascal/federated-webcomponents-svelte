@@ -1,11 +1,4 @@
 <svelte:options tag="my-header" />
-
-<script>
-  let count = 0;
-  window.addToCart = () => {
-    count += 1;
-  }
-</script>
 <style>
   header {
     background: lightblue;
@@ -16,6 +9,5 @@
   }
 </style>
 <header>
-  <div>My Svelte Header III</div>
-  <div>{count}</div>
+  <div>My Svelte web component header</div>
 </header>

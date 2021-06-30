@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require('dotenv-webpack');
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const SveltePreprocess = require("svelte-preprocess");
+// const SveltePreprocess = require("svelte-preprocess");
 
 const deps = require("./package.json").dependencies;
 module.exports = {
@@ -91,23 +91,30 @@ module.exports = {
     },
 
     plugins: [
-        function SvelteCustomElementTag(compiler) {
-        },
         new ModuleFederationPlugin({
-            name: "wcheader",
+            name: "mywc",
             filename: "remoteEntry.js",
             remotes: {},
             exposes: {
-                "./wcheader": "./src/Header.svelte",
+                "./my-header": "./src/Header.svelte",
+                "./my-footer": "./src/Footer.svelte",
             },
-            shared: {},
+            shared: {
+                // ...deps,
+                // svelte: {
+                //     singleton: true,
+                //     requiredVersion: deps["svelte"],
+                // },
+            },
         }),
         new HtmlWebpackPlugin({
             template: "./public/index.html",
             // chunks: ["main"],
         }),
         //This gets all our css and put in a unique file
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+        }),
         //take our environment variable in .env file
         //And it does a text replace in the resulting bundle for any instances of process.env.
         new Dotenv(),
