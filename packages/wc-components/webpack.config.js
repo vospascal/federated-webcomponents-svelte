@@ -98,6 +98,8 @@ module.exports = {
             exposes: {
                 "./my-header": "./src/Header.svelte",
                 "./my-footer": "./src/Footer.svelte",
+                "./my-button": "./src/Button.svelte",
+                "./my-modal": "./src/Modal/Modal.svelte",
             },
             shared: {
                 // ...deps,

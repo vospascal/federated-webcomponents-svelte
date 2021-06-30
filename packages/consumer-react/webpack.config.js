@@ -49,7 +49,7 @@ module.exports = {
             name: "consumer-react",
             filename: "remoteEntry.js",
             remotes: {
-                wcheader: "wcheader@http://localhost:3002/remoteEntry.js",
+                mywc: "mywc@http://localhost:3002/remoteEntry.js",
             },
             exposes: {},
             shared: {
