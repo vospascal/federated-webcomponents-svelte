@@ -100,6 +100,8 @@ module.exports = {
                 "./my-footer": "./src/Footer.svelte",
                 "./my-button": "./src/Button.svelte",
                 "./my-modal": "./src/Modal/Modal.svelte",
+                "./my-spinner": "./src/Spinner.svelte",
+                "./my-select": "./src/Select.svelte",
             },
             shared: {
                 // ...deps,

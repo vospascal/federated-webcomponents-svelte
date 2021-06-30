@@ -49,10 +49,8 @@
         }
     }
 
-    export let closefooter;
-    export let closeheader;
-    console.log(closefooter)
-    console.log(closeheader)
+    export let closefooter; //attributes
+    export let closeheader; //attributes
 </script>
 <style>
     div.modal {
@@ -95,9 +93,6 @@
         overflow: auto;
     }
 
-    h1 {
-        opacity: 0.5;
-    }
 </style>
 
 <button on:click={open}>

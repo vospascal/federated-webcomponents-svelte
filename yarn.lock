@@ -2832,6 +2832,7 @@ __metadata:
     "@babel/preset-react": ^7.14.5
     babel-loader: ^8.2.2
     html-webpack-plugin: ^5.3.2
+    jsx-native-events: ^2.0.0
     react: ^17.0.2
     react-dom: ^17.0.2
     serve: ^12.0.0
@@ -4919,6 +4920,15 @@ fsevents@^1.2.7:
   bin:
     json5: lib/cli.js
   checksum: 07b1f90c2801dc52df2b0ac8d606cc400a85cda79130e754780fa2ab9805d0fb85a0e61b6a5cdd68e88e5d0c8f9109ec415af08283175556cdccaa8563853908
+  languageName: node
+  linkType: hard
+
+"jsx-native-events@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "jsx-native-events@npm:2.0.0"
+  peerDependencies:
+    react: 16.x
+  checksum: 922fcde57ae7d85565a916225b0975170e66eeca656bc6025c139d71f9fbcad1cdfc0f320d04e8474f444d0bc8c6aad5efd6895aae2588d85599bd892049c643
   languageName: node
   linkType: hard
 
