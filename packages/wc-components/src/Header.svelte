@@ -1,5 +1,9 @@
 <svelte:options tag="my-header" />
 <style>
+  :host {
+    display: initial;
+  }
+
   header {
     background: lightblue;
     padding: 1em;

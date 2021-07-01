@@ -11,6 +11,8 @@ function App() {
         window['mywc'].get("./my-modal").then((module) => module().default);
         window['mywc'].get("./my-spinner").then((module) => module().default);
         window['mywc'].get("./my-select").then((module) => module().default);
+        window['mywc'].get("./my-box").then((module) => module().default);
+        window['mywc'].get("./my-flex").then((module) => module().default);
     }, [])
 
     const clickedIt = (event) => {
@@ -23,45 +25,68 @@ function App() {
     }
 
     const options = [
-        {name: 'lemon pie', value:'lemon_pie' },
-        {name: 'cherry pie', value:'cherry_pie' },
-        {name: 'apple pie', value:'apple_pie' }
+        {name: 'lemon pie', value: 'lemon_pie'},
+        {name: 'cherry pie', value: 'cherry_pie'},
+        {name: 'apple pie', value: 'apple_pie'}
     ]
 
-  return (
-    <div>
-        <my-header></my-header>
-        <my-footer></my-footer>
+    return (
+        <div>
+            <my-header></my-header>
+            <my-footer></my-footer>
 
-        <my-select placeholder="Select option" options={JSON.stringify(options)} onEventChange={(e)=> console.log(e)} />
+            <my-flex>
+                <my-box
+                    bg={["bg.secondary", "bg.primary"]}
+                    color={["color.primary", "color.secondary"]}
+                    p={["space.s", "space.m", "space.l"]}
+                    width={["100%", "50%", "75%"]}
+                >
+                    <my-flex>
+                        <my-box bg="orange">a</my-box>
+                        <my-box bg="green">b</my-box>
+                    </my-flex>
+                </my-box>
+                <my-box
+                    bg={["bg.secondary", "bg.primary"]}
+                    color={["color.primary", "color.secondary"]}
+                    p={["space.s", "space.m", "space.l"]}
+                    width={["100%", "50%", "25%"]}
+                >
+                    boxed content
+                </my-box>
+            </my-flex>
 
-        <my-button theme="primary" name="test primary">nice button</my-button>
-        <my-button theme="secondary" name="test primary">
-            <span slot="start"><strong>go</strong></span>
-            test
-            <span slot="end"><strong>stop</strong></span>
-        </my-button>
+            <my-select placeholder="Select option" options={JSON.stringify(options)}
+                       onEventChange={(e) => console.log(e)}/>
 
-        <my-spinner />
-        <my-spinner theme="secondary" />
+            <my-button theme="primary" name="test primary">nice button</my-button>
+            <my-button theme="secondary" name="test primary">
+                <span slot="start"><strong>go</strong></span>
+                test
+                <span slot="end"><strong>stop</strong></span>
+            </my-button>
 
-        <my-modal closefooter="true" closeheader="true">
-            <div slot="trigger">
-                abc
-            </div>
-            <div slot="header">
-                <strong>header Modal</strong>
-            </div>
-            <div slot="content">
-                content
-                <my-button onClick={clickedIt}>nice button</my-button>
-            </div>
-            <div slot="footer">
-                <strong>footer Modal</strong>
-            </div>
-        </my-modal>
-    </div>
-  );
+            <my-spinner/>
+            <my-spinner theme="secondary"/>
+
+            <my-modal closefooter="true" closeheader="true">
+                <div slot="trigger">
+                    abc
+                </div>
+                <div slot="header">
+                    <strong>header Modal</strong>
+                </div>
+                <div slot="content">
+                    content
+                    <my-button onClick={clickedIt}>nice button</my-button>
+                </div>
+                <div slot="footer">
+                    <strong>footer Modal</strong>
+                </div>
+            </my-modal>
+        </div>
+    );
 }
 
 export default App;

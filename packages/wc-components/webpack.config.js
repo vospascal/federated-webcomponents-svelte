@@ -42,6 +42,7 @@ module.exports = {
                 use: {
                     loader: 'svelte-loader',
                     options: {
+                        emitCss: false,
                         compilerOptions: {
                             customElement: true,
                             tag: null
@@ -102,6 +103,8 @@ module.exports = {
                 "./my-modal": "./src/Modal/Modal.svelte",
                 "./my-spinner": "./src/Spinner.svelte",
                 "./my-select": "./src/Select.svelte",
+                "./my-box": "./src/Box.svelte",
+                "./my-flex": "./src/Flex.svelte",
             },
             shared: {
                 // ...deps,

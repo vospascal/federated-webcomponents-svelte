@@ -1,10 +1,13 @@
 <svelte:options tag="my-spinner" />
-
 <script>
     export let theme = 'primary';
 </script>
 
 <style>
+    :host {
+        display: inline-block;
+    }
+
     .spinner {
         display: inline-block;
         position: relative;

@@ -3,8 +3,11 @@
     export let name = '';
     export let theme = 'primary';
 </script>
-
 <style>
+    :host {
+        display: inline-block;
+    }
+
     button {
         padding:5px;
     }

@@ -45,3 +45,10 @@ App.svelte
 
 <Button theme="primary" />
 <Button theme="text" />
+
+
+
+
+<custom-element class="class-to-add"></custom-element>
+export { clazz as class };
+<div class={`col-${width} ${clazz || ''}`}></div>

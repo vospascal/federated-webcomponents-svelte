@@ -1,5 +1,9 @@
 <svelte:options tag="my-footer" />
 <style>
+  :host {
+    display: initial;
+  }
+
   header {
     background:lightsalmon;
     padding: 1em;

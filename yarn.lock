@@ -4053,6 +4053,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"goober@npm:^2.0.38":
+  version: 2.0.38
+  resolution: "goober@npm:2.0.38"
+  peerDependencies:
+    csstype: ^2.6.2
+  checksum: 38d5132176d4ab7c19d364eb1797db0e1e4129794320afd34be0b1b200d0986f1c5a51b121a5e3614de711afa13f01d1decf041e02adfa37d26e38e6c5ea6d09
+  languageName: node
+  linkType: hard
+
 "graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6":
   version: 4.2.6
   resolution: "graceful-fs@npm:4.2.6"
@@ -8055,6 +8064,7 @@ fsevents@^1.2.7:
     css-loader: ^5.2.6
     dotenv-webpack: ^7.0.3
     file-loader: ^6.2.0
+    goober: ^2.0.38
     html-webpack-plugin: ^5.3.2
     mini-css-extract-plugin: ^1.6.2
     serve: ^12.0.0
