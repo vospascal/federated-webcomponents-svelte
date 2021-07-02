@@ -5,7 +5,7 @@
   }
 
   header {
-    background:lightsalmon;
+    background: #e9ecef;
     padding: 1em;
     font-size: xx-large;
     display: grid;

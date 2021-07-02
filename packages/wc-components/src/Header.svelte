@@ -5,7 +5,8 @@
   }
 
   header {
-    background: lightblue;
+    background: #087f5b;
+    color:#e6fcf5;
     padding: 1em;
     font-size: xx-large;
     display: grid;

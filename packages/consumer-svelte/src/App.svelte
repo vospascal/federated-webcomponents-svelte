@@ -26,25 +26,25 @@
     let obj = {name: '213'}
 </script>
 <my-header></my-header>
-<my-footer></my-footer>
+
 
 <my-flex>
     <my-box
-            bg={["bg.secondary", "bg.primary"]}
-            color={["color.primary", "color.secondary"]}
+            bg={["#cd5c5b", "#e17672", "#ef938d", "#f9b1ab"]}
+            color={["#fff","#fff","#fff","#000"]}
             p={["space.s", "space.m", "space.l"]}
-            width={["100%","50%","75%"]}
+            width={["100%", "50%", "75%", "87.5%"]}
     >
         <my-flex>
-            <my-box bg="orange">a</my-box>
-            <my-box bg="green">b</my-box>
+            <my-box bg="#f2f3f3" color="#000000">a</my-box>
+            <my-box bg="#ffffff" color="#000000">b</my-box>
         </my-flex>
     </my-box>
     <my-box
-            bg={["bg.secondary", "bg.primary"]}
-            color={["color.primary", "color.secondary"]}
+            bg={["#6476bc", "#7e8dce", "#99a4de", "#b6bdea"]}
+            color={["#fff","#fff","#fff","#000"]}
             p={["space.s", "space.m", "space.l"]}
-            width={["100%","50%","25%"]}
+            width={["100%", "50%", "25%", "12.5%"]}
     >
         boxed content
     </my-box>
@@ -77,3 +77,4 @@
         <strong>footer Modal</strong>
     </div>
 </my-modal>
+<my-footer></my-footer>

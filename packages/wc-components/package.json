@@ -9,8 +9,10 @@
     "@babel/core": "^7.14.6",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.7",
+    "cxs": "^6.2.0",
     "goober": "^2.0.38",
-    "svelte": "^3.38.3"
+    "svelte": "^3.38.3",
+    "zustand": "^3.5.5"
   },
   "devDependencies": {
     "babel-loader": "^8.2.2",

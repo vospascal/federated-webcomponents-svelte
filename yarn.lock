@@ -3064,6 +3064,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cxs@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "cxs@npm:6.2.0"
+  checksum: 56132159ed1bbed542e97d2bd04a16c9c321684efe0a0a7e958f05fbf22d07de31ea41498c58ea37faa63661153f3877f7f948397bef43a234bfa3022b5bdbef
+  languageName: node
+  linkType: hard
+
 "date-fns@npm:^2.16.1":
   version: 2.22.1
   resolution: "date-fns@npm:2.22.1"
@@ -8062,6 +8069,7 @@ fsevents@^1.2.7:
     babel-loader: ^8.2.2
     cross-env: ^7.0.3
     css-loader: ^5.2.6
+    cxs: ^6.2.0
     dotenv-webpack: ^7.0.3
     file-loader: ^6.2.0
     goober: ^2.0.38
@@ -8073,6 +8081,7 @@ fsevents@^1.2.7:
     svelte-preprocess: ^4.7.3
     webpack: ^5.41.1
     webpack-cli: ^4.7.2
+    zustand: ^3.5.5
   languageName: unknown
   linkType: soft
 
@@ -8510,5 +8519,17 @@ fsevents@^1.2.7:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 096c3b40beb2804659539be1605a35c58eb0c85285f94b77b3e924f42ee265c1a40bf9f4153770039517146b469a964d51742395f35ca8135fc9f7e4982b785d
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^3.5.5":
+  version: 3.5.5
+  resolution: "zustand@npm:3.5.5"
+  peerDependencies:
+    react: ">=16.8"
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: 9a1c264d10f29b68d3b12c1537e3fbde920c5170f0be08989057ad5268c52eee8fcd566db009304206085d3ddeb1e389f75c56a4f4ba01bb2c63a39b9cb7e4bf
   languageName: node
   linkType: hard

@@ -1,26 +1,28 @@
 <svelte:options tag="my-box"/>
-<style>
-    :host {
-        display: initial;
-        width: 100%;
-    }
-</style>
 <script>
+    import applyShadowRootStyles from "./applyShadowRootStyles"
     import {get_current_component} from "svelte/internal";
-    const component = get_current_component();
 
-    import {styled} from "./Styled-system/index";
+    import {styled, themeGet} from "./Styled-system/index";
     import theme from "./Styled-system/theme";
-    import {css} from 'goober';
+    import {css} from './Goober/css';
+    import {raw} from './Goober/raw';
 
+    const component = get_current_component();
     const shadowSheet = css.bind({target: component.shadowRoot})
-    const style = styled($$props, $theme);
-    const generatedClassname = shadowSheet`display: inherit; box-sizing: border-box; ${style}`;
+    const generatedStyle = styled($$props, $theme);
+    const style = `
+        font-family: ${themeGet($theme, "font.default")};
+        display: inline-block;
+        box-sizing: border-box;
+        width:100%;
+    `;
 
+    const generatedClassname = shadowSheet`${style} ${generatedStyle}`;
+
+    const rawStyles = raw(`${style} ${generatedStyle}`, ':host');
+    const root = component.shadowRoot
+    const styleBind = {rawStyles, root}
 </script>
 
-<div class="{generatedClassname}">
-    <slot/>
-</div>
-
-
+<slot use:applyShadowRootStyles={styleBind}/>
