@@ -1,9 +1,11 @@
 /** @jsx nativeEvents */
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import nativeEvents from 'jsx-native-events'
 
 
 function App() {
+    const [name, setName] = useState('i should change');
+
     useEffect(() => {
         window['mywc'].get("./my-header").then((module) => module().default);
         window['mywc'].get("./my-footer").then((module) => module().default);
@@ -34,6 +36,12 @@ function App() {
         <div>
             <my-header></my-header>
 
+            <my-provider>
+                <div>
+                    <my-consumer />
+                </div>
+            </my-provider>
+
             <my-flex wrap="wrap" align="stretch" content="stretch">
                 <my-box
                     bg={["#cd5c5b", "#e17672", "#ef938d", "#f9b1ab"]}
@@ -57,9 +65,10 @@ function App() {
             </my-flex>
 
             <my-select placeholder="Select option" options={JSON.stringify(options)}
-                       onEventChange={(e) => console.log(e)}/>
+                       onEventChange={(e) => setName(e.detail.value)}/>
 
-            <my-button theme="primary" name="test primary">nice button</my-button>
+            {name}
+            <my-button theme="primary" name={`${name}`}>nice button</my-button>
             <my-button theme="secondary" name="test primary">
                 <span slot="start"><strong>go</strong></span>
                 test

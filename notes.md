@@ -52,3 +52,22 @@ App.svelte
 <custom-element class="class-to-add"></custom-element>
 export { clazz as class };
 <div class={`col-${width} ${clazz || ''}`}></div>
+
+
+
+
+:host {
+    --Button--base-color: #c6538c;
+    --Button--disabled-color: #c6538ce1;
+}
+button {
+    background-color: var(--Button--base-color);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+button[disabled] {
+    background: var(--Button--disabled-color);
+}

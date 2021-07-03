@@ -1,8 +1,4 @@
 <svelte:options tag="my-button" />
-<script>
-    export let name = '';
-    export let theme = 'primary';
-</script>
 <style>
     :host {
         display: inline-block;
@@ -21,8 +17,22 @@
         color:white;
     }
 </style>
+<script>
+    export let name = '';
+    export let theme = 'primary';
 
-<button name={name} theme={theme}>
+    $: console.log(name); //reactive to name
+
+    //reactive to name
+    // $: { name, handleChange() }
+    // function handleChange() {
+    //     console.log(name)
+    // }
+</script>
+
+
+<button name={name} theme={theme} >
+    <!--{name} reactive to name-->
     {#if $$slots.start}
         <slot name="start"/>
     {/if}
