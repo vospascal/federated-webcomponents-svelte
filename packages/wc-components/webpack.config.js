@@ -105,6 +105,8 @@ module.exports = {
                 "./my-select": "./src/Select.svelte",
                 "./my-box": "./src/Box.svelte",
                 "./my-flex": "./src/Flex.svelte",
+                "./my-provider": "./src/Context/Provider.svelte",
+                "./my-consumer": "./src/Context/Consumer.svelte",
             },
             shared: {
                 // ...deps,

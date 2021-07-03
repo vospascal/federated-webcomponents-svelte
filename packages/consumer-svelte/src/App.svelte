@@ -7,6 +7,8 @@
     window['mywc'].get("./my-select").then((module) => module().default);
     window['mywc'].get("./my-box").then((module) => module().default);
     window['mywc'].get("./my-flex").then((module) => module().default);
+    window['mywc'].get("./my-provider").then((module) => module().default);
+    window['mywc'].get("./my-consumer").then((module) => module().default);
 
     const clickedIt = (event) => {
         console.log(event, 'clickedIt')
@@ -27,6 +29,12 @@
 </script>
 <my-header></my-header>
 
+<my-provider>
+    <div>
+        <my-consumer />
+        <my-consumer />
+    </div>
+</my-provider>
 
 <my-flex>
     <my-box

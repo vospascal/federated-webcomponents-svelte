@@ -9,6 +9,8 @@ const App = {
         window["mywc"].get("./my-select").then(module => module().default)
         window["mywc"].get("./my-box").then(module => module().default)
         window["mywc"].get("./my-flex").then(module => module().default)
+        window['mywc'].get("./my-provider").then((module) => module().default);
+        window['mywc'].get("./my-consumer").then((module) => module().default);
     },
     data: function () {
         return {
@@ -36,6 +38,13 @@ const App = {
     template: `
       <div>
       <my-header></my-header>
+
+      <my-provider>
+        <div>
+          <my-consumer />
+          <my-consumer />
+        </div>
+      </my-provider>
 
       <my-flex wrap="wrap" align="stretch" content="stretch">
         <my-box
