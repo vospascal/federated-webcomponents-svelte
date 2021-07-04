@@ -24,5 +24,3 @@
 </script>
 
 <slot use:applyShadowRootStyles={styleBind}/>
-
-

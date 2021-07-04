@@ -1,7 +1,5 @@
 <svelte:options tag="my-box"/>
 <script>
-
-
     import applyShadowRootStyles from "./applyShadowRootStyles"
     import {get_current_component} from "svelte/internal";
 
@@ -10,8 +8,6 @@
     import {raw} from './Goober/raw';
 
     const component = get_current_component();
-
-
     const generatedStyle = styled(
         validProps($$props, ['width', 'color', 'bg', 'p']),
         $theme
