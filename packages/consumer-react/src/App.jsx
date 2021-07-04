@@ -17,6 +17,7 @@ function App() {
         window['mywc'].get("./my-flex").then((module) => module().default);
         window['mywc'].get("./my-provider").then((module) => module().default);
         window['mywc'].get("./my-consumer").then((module) => module().default);
+        window['mywc'].get("./my-theme-provider").then((module) => module().default);
     }, [])
 
     const clickedIt = (event) => {
@@ -35,7 +36,7 @@ function App() {
     ]
 
     return (
-        <div>
+        <my-theme-provider>
             <my-header></my-header>
 
             <my-provider>
@@ -53,8 +54,8 @@ function App() {
                     width={["100%", "50%", "75%", "87.5%"]}
                 >
                     <my-flex>
-                        <my-box bg="#f2f3f3" color="#000000">a</my-box>
-                        <my-box bg="#ffffff" color="#000000">b</my-box>
+                        <my-box bg="bg.primary" color="#000000">a</my-box>
+                        <my-box bg="bg.secondary" color="#000000">b</my-box>
                     </my-flex>
                 </my-box>
                 <my-box
@@ -98,7 +99,7 @@ function App() {
             </my-modal>
 
             <my-footer></my-footer>
-        </div>
+        </my-theme-provider>
     );
 }
 

@@ -107,6 +107,7 @@ module.exports = {
                 "./my-flex": "./src/Flex.svelte",
                 "./my-provider": "./src/Context/Provider.svelte",
                 "./my-consumer": "./src/Context/Consumer.svelte",
+                "./my-theme-provider": "./src/ThemeProvider.svelte",
             },
             shared: {
                 // ...deps,
