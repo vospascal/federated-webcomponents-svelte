@@ -36,7 +36,7 @@
     </div>
 </my-provider>
 
-<my-flex>
+<my-flex wrap="wrap" align="stretch" content="stretch">
     <my-box
             bg={["#cd5c5b", "#e17672", "#ef938d", "#f9b1ab"]}
             color={["#fff","#fff","#fff","#000"]}

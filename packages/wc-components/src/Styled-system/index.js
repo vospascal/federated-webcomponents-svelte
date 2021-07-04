@@ -70,4 +70,12 @@ const styled = (attributes, theme) => {
     return createCssText(attributes, theme);
 }
 
-export { createCssText, themeGet, styled };
+function validProps(obj, validKeys) {
+    const newObject = {};
+    Object.keys(obj).forEach(key => {
+        if (validKeys.includes(key)) newObject[key] = obj[key];
+    });
+    return newObject;
+}
+
+export { createCssText, themeGet, styled, validProps };
