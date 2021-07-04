@@ -5,11 +5,9 @@
 
     import {styled, themeGet} from "./Styled-system/index";
     import theme from "./Styled-system/theme";
-    import {css} from './Goober/css';
     import {raw} from './Goober/raw';
 
     const component = get_current_component();
-    const shadowSheet = css.bind({target: component.shadowRoot})
     const generatedStyle = styled($$props, $theme);
     const style = `
         font-family: ${themeGet($theme, "font.default")};
@@ -17,8 +15,7 @@
         box-sizing: border-box;
         width:100%;
     `;
-
-    const generatedClassname = shadowSheet`${style} ${generatedStyle}`;
+    const generatedClassname = `${style} ${generatedStyle}`;
 
     const rawStyles = raw(`${style} ${generatedStyle}`, ':host');
     const root = component.shadowRoot

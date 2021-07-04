@@ -3,15 +3,11 @@
     import applyShadowRootStyles from "./applyShadowRootStyles"
     import {get_current_component} from "svelte/internal";
 
-    const component = get_current_component();
-
     import {styled, themeGet} from "./Styled-system/index";
     import theme from "./Styled-system/theme";
-    import {css} from './Goober/css';
     import {raw} from './Goober/raw';
 
-
-    const shadowSheet = css.bind({target: component.shadowRoot})
+    const component = get_current_component();
     const generatedStyle = styled($$props, $theme);
     const style = `
         font-family: ${themeGet($theme, "font.default")};
@@ -19,10 +15,9 @@
         box-sizing: border-box;
         width: 100%;
     `;
-    const generatedClassname = shadowSheet`${style} ${generatedStyle}`;
+    const generatedClassname = `${style} ${generatedStyle}`;
 
     const rawStyles = raw(`${style} ${generatedStyle}`, ':host');
-
     const root = component.shadowRoot
     const styleBind = {rawStyles, root}
 </script>

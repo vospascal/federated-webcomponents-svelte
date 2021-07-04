@@ -1,6 +1,6 @@
-<svelte:options tag="my-consumer" />
+<svelte:options tag="my-consumer"/>
 <script>
-    import { onMount } from 'svelte';
+    import {onMount} from 'svelte';
     import {get_current_component} from "svelte/internal";
     import {Channel} from "./channel";
 
@@ -15,7 +15,7 @@
         true
     );
 
-    let channelData ="";
+    let channelData = "";
 
     onMount(async () => {
         channel.connect((data) => {

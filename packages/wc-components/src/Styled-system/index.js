@@ -13,6 +13,7 @@ function dlv(obj, key, def, p, undef) {
 const themeGet = (theme, pathOrValue) =>
     pathOrValue ? dlv(theme, pathOrValue, pathOrValue) : pathOrValue;
 
+// https://github.com/manuschillerdev/svelte-styled-system
 const createCssText = (attributes, theme, pseudoElementSelector) => {
     let cssText = "";
     const mediaQueries = [];
