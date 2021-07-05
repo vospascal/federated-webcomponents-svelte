@@ -1,6 +1,7 @@
 /** @jsx nativeEvents */
 import React, {useEffect, useState} from "react";
 import nativeEvents from 'jsx-native-events'
+import Test from "./Test";
 
 
 function App() {
@@ -64,16 +65,22 @@ function App() {
                     p={["space.s", "space.m", "space.l"]}
                     width={["100%", "50%", "25%", "12.5%"]}
                 >
-                    boxed content
+                    <Test>boxed content</Test>
                 </my-box>
             </my-flex>
 
-            <my-select placeholder="Select option" options={JSON.stringify(options)}
-                       onEventChange={(e) => setName(e.detail.value)}/>
-
+            <my-select placeholder="Select option"
+                       options={JSON.stringify(options)}
+                       onEventChange={(e) => setName(e.detail.value)}
+            />
             {name}
-            <my-button theme="primary" name={`${name}`}>nice button</my-button>
-            <my-button theme="secondary" name="test primary">
+
+            <my-button
+                theme="primary"
+                name={`${name}`}
+                i-got-a-hyphen={`${name}`}
+            >nice button</my-button>
+            <my-button theme="secondary" name="test secondary">
                 <span slot="start"><strong>go</strong></span>
                 test
                 <span slot="end"><strong>stop</strong></span>

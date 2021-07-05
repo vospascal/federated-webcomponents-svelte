@@ -1,5 +1,7 @@
+import Test from "./Test";
+
 const App = {
-    components: {},
+    components: {Test},
     mounted() {
         window["mywc"].get("./my-header").then(module => module().default)
         window["mywc"].get("./my-footer").then(module => module().default)
@@ -22,7 +24,8 @@ const App = {
                     value: "cherry_pie"
                 },
                 {name: "apple pie", value: "apple_pie"}
-            ]
+            ],
+
         }
     },
     methods: {
@@ -65,7 +68,7 @@ const App = {
                 :p='["space.s", "space.m", "space.l"]'
                 :width='["100%", "50%", "25%", "12.5%"]'
             >
-              boxed content
+              <Test>boxed content</Test>
             </my-box>
           </my-flex>
     

@@ -1526,40 +1526,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-core@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@vue/compiler-core@npm:3.1.2"
+"@vue/compiler-core@npm:3.1.4":
+  version: 3.1.4
+  resolution: "@vue/compiler-core@npm:3.1.4"
   dependencies:
     "@babel/parser": ^7.12.0
     "@babel/types": ^7.12.0
-    "@vue/shared": 3.1.2
+    "@vue/shared": 3.1.4
     estree-walker: ^2.0.1
     source-map: ^0.6.1
-  checksum: c52338daff84a60057ea71ffb2fa83c3db4498bf3077b16614618800c887949412f30390fa55c49449f4512902a9bec0bdc5f326dcb4cd2f4b61659f10269199
+  checksum: 78b3eaa2811a5c1223c8fa848938d3b29d1ee0c91941058969b0d660be8ac114dc53857054e036dc7a12c35b757b7901182234fc34ab9e441c380266e5cb6917
   languageName: node
   linkType: hard
 
-"@vue/compiler-dom@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@vue/compiler-dom@npm:3.1.2"
+"@vue/compiler-dom@npm:3.1.4":
+  version: 3.1.4
+  resolution: "@vue/compiler-dom@npm:3.1.4"
   dependencies:
-    "@vue/compiler-core": 3.1.2
-    "@vue/shared": 3.1.2
-  checksum: 5dd8ba4d852cfdd144392658e9cf2cb77cb5e842944695d759068ac4226f6c1dd862b1007de3a06469efc95edee648b6faec50707d057ed18daaf9e183ce1c55
+    "@vue/compiler-core": 3.1.4
+    "@vue/shared": 3.1.4
+  checksum: 7904fdd56b8766b70ad14dcd8d656b522c629dd1a0873156baf9fb71c998b97c145e85d8707e52d97c69c2eac35f37d28fbf9fdc109ab088b86048f6d9a47951
   languageName: node
   linkType: hard
 
 "@vue/compiler-sfc@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "@vue/compiler-sfc@npm:3.1.2"
+  version: 3.1.4
+  resolution: "@vue/compiler-sfc@npm:3.1.4"
   dependencies:
     "@babel/parser": ^7.13.9
     "@babel/types": ^7.13.0
     "@types/estree": ^0.0.48
-    "@vue/compiler-core": 3.1.2
-    "@vue/compiler-dom": 3.1.2
-    "@vue/compiler-ssr": 3.1.2
-    "@vue/shared": 3.1.2
+    "@vue/compiler-core": 3.1.4
+    "@vue/compiler-dom": 3.1.4
+    "@vue/compiler-ssr": 3.1.4
+    "@vue/shared": 3.1.4
     consolidate: ^0.16.0
     estree-walker: ^2.0.1
     hash-sum: ^2.0.0
@@ -1571,18 +1571,18 @@ __metadata:
     postcss-selector-parser: ^6.0.4
     source-map: ^0.6.1
   peerDependencies:
-    vue: 3.1.2
-  checksum: 7c0ba0b037666201a1c379c800810c816e4adf88fff3a4aafc7a6e206c6ae31dd9d4b25a8eab13239ea754113fa9b3b18ea5dd005481747a9ebe9c9302ae3d4a
+    vue: 3.1.4
+  checksum: 1200de53f0dec13159bc72dbbabc9e3a04160027fd9bfedf6bc1e240eccb2293c1de19bb30dff9c6b8c310a371bb56a72968b4f74cfb5078ca7749b45708bedf
   languageName: node
   linkType: hard
 
-"@vue/compiler-ssr@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@vue/compiler-ssr@npm:3.1.2"
+"@vue/compiler-ssr@npm:3.1.4":
+  version: 3.1.4
+  resolution: "@vue/compiler-ssr@npm:3.1.4"
   dependencies:
-    "@vue/compiler-dom": 3.1.2
-    "@vue/shared": 3.1.2
-  checksum: 29f155e42993419772d2e90c0b8dfa875111a70366bc4861b83425298940e9e51a4d154284587a7836ce01c54c302b38d83ba36f966274aeb260f4de34551229
+    "@vue/compiler-dom": 3.1.4
+    "@vue/shared": 3.1.4
+  checksum: 8db0b0e3c3d7b53621947f0b4916457f121bed0108c75db474561c991fbde696bdd03c32a132a457941a9e821351dd49cf16a7fb99566168d8857db196858fbd
   languageName: node
   linkType: hard
 
@@ -1606,40 +1606,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/reactivity@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@vue/reactivity@npm:3.1.2"
+"@vue/reactivity@npm:3.1.4":
+  version: 3.1.4
+  resolution: "@vue/reactivity@npm:3.1.4"
   dependencies:
-    "@vue/shared": 3.1.2
-  checksum: b09b35f7d02b4da3877205f0df2bdd9e59d8e2ae64948156d01f9ea5eb0a3382f14a8ff954b66a8b33ff8048deab5dcecdcccf9a3720c070e82a92d1a99ed6b3
+    "@vue/shared": 3.1.4
+  checksum: 6c82d4dbf269a701c4e14bcf74d86a53d7ac871d2ebc142aab6dce85d18b667b378f1e3911eb537e1537cc624841e5d516e84c8adc60f0892e4718c5113fac0b
   languageName: node
   linkType: hard
 
-"@vue/runtime-core@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@vue/runtime-core@npm:3.1.2"
+"@vue/runtime-core@npm:3.1.4":
+  version: 3.1.4
+  resolution: "@vue/runtime-core@npm:3.1.4"
   dependencies:
-    "@vue/reactivity": 3.1.2
-    "@vue/shared": 3.1.2
-  checksum: 90c6b852632ca79fe5ae3f9730862404756a9356bf8cd23965ae13c58df8674703c871d9004b59caf2637b27565c612be904dc99bc6990390bdf274ccbde8e63
+    "@vue/reactivity": 3.1.4
+    "@vue/shared": 3.1.4
+  checksum: f2ed8ca9d47b71751505f5ad0010d2cb7e12abfad91f005d79a5bc2997c91b33bf0bf735d0cc7981c3dfc45e9ee2a54d0ebd38fce7c1448006df6c2a3ea836db
   languageName: node
   linkType: hard
 
-"@vue/runtime-dom@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@vue/runtime-dom@npm:3.1.2"
+"@vue/runtime-dom@npm:3.1.4":
+  version: 3.1.4
+  resolution: "@vue/runtime-dom@npm:3.1.4"
   dependencies:
-    "@vue/runtime-core": 3.1.2
-    "@vue/shared": 3.1.2
+    "@vue/runtime-core": 3.1.4
+    "@vue/shared": 3.1.4
     csstype: ^2.6.8
-  checksum: be06ccefcc0f361a4714235ef5963d5678b5a76c659386699718a924d03cc34342d466a9ed58b27506ce8fdb461e1b38515f18519c809fc8ade6cc80526e0167
+  checksum: 53dfa4fa52a352ef27c081f15856460b134146512994585513a9d6925ebdf8e612e56e214dc746aa8ef6cd315c582ffc760bbfe7dcb5642eb77cd5fddd5cdd72
   languageName: node
   linkType: hard
 
-"@vue/shared@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@vue/shared@npm:3.1.2"
-  checksum: 20f24c4dea0a25a35c4caa06748f8de1e545d780d5ed49565ecad9d5e73297e1a28f757b5a3aed54b3861a8e19f4c33e438c80218bbd82664f04d0dbd81d1905
+"@vue/shared@npm:3.1.4":
+  version: 3.1.4
+  resolution: "@vue/shared@npm:3.1.4"
+  checksum: 3fb7e5c171d447d7f2a75d045a6a780359200dad2ff7b62ff8d4f66588c871f32822a06c1cc7ff13ff2a3f50f5e872118ed8837a48c22415ac5e152e6cf9717e
   languageName: node
   linkType: hard
 
@@ -1865,7 +1865,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.2.1":
+"acorn@npm:^8.2.1, acorn@npm:^8.4.1":
   version: 8.4.1
   resolution: "acorn@npm:8.4.1"
   bin:
@@ -2836,7 +2836,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     serve: ^12.0.0
-    webpack: 5.41.1
+    webpack: 5.42.0
     webpack-cli: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -2854,12 +2854,12 @@ __metadata:
     dotenv-webpack: ^7.0.3
     file-loader: ^6.2.0
     html-webpack-plugin: ^5.3.2
-    mini-css-extract-plugin: ^1.6.2
+    mini-css-extract-plugin: ^2.0.0
     serve: ^12.0.0
     svelte: ^3.38.3
     svelte-loader: ^3.1.2
     svelte-preprocess: ^4.7.3
-    webpack: ^5.41.1
+    webpack: ^5.42.0
     webpack-cli: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -5307,7 +5307,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:1.6.2, mini-css-extract-plugin@npm:^1.6.2":
+"mini-css-extract-plugin@npm:1.6.2":
   version: 1.6.2
   resolution: "mini-css-extract-plugin@npm:1.6.2"
   dependencies:
@@ -5317,6 +5317,17 @@ fsevents@^1.2.7:
   peerDependencies:
     webpack: ^4.4.0 || ^5.0.0
   checksum: 53c162db80f2b58dcc1e85a2e1b52ffed73d3184ed5b8a037786d8562fbecf1b936397ea3873f3375356f8a6def27ec97867f9938356358d369d2a9e20a30718
+  languageName: node
+  linkType: hard
+
+"mini-css-extract-plugin@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "mini-css-extract-plugin@npm:2.0.0"
+  dependencies:
+    schema-utils: ^3.0.0
+  peerDependencies:
+    webpack: ^5.0.0
+  checksum: 4b54e77a830a284b48cc71dbbf739b586ab9a63fec8356c9389e16205b068e0318f59d7355b8695fd6a779f6c324b9c29c60280527aaadbca2ef9c23f25b9a21
   languageName: node
   linkType: hard
 
@@ -8030,13 +8041,13 @@ fsevents@^1.2.7:
   linkType: hard
 
 "vue@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "vue@npm:3.1.2"
+  version: 3.1.4
+  resolution: "vue@npm:3.1.4"
   dependencies:
-    "@vue/compiler-dom": 3.1.2
-    "@vue/runtime-dom": 3.1.2
-    "@vue/shared": 3.1.2
-  checksum: 36dd5b5592bc1ddbbc66e3b46150023a83ea6521e80c3ac7887c026b3a55088bb29b2b79be56ad1e5cdff8b66a745e75a144ec048ea04cce008c71b0fc13e9d1
+    "@vue/compiler-dom": 3.1.4
+    "@vue/runtime-dom": 3.1.4
+    "@vue/shared": 3.1.4
+  checksum: 5b256d788c12cbd74ba3ca7a83456696cbacc2b7ef02e54a9f587c7bf5c42d7892e8d896aac96554056263c87f21e956a9636696bbd0843b05a92bc040fe3ffa
   languageName: node
   linkType: hard
 
@@ -8074,12 +8085,12 @@ fsevents@^1.2.7:
     file-loader: ^6.2.0
     goober: ^2.0.38
     html-webpack-plugin: ^5.3.2
-    mini-css-extract-plugin: ^1.6.2
+    mini-css-extract-plugin: ^2.0.0
     serve: ^12.0.0
     svelte: ^3.38.3
     svelte-loader: ^3.1.2
     svelte-preprocess: ^4.7.3
-    webpack: ^5.41.1
+    webpack: ^5.42.0
     webpack-cli: ^4.7.2
     zustand: ^3.5.5
   languageName: unknown
@@ -8258,16 +8269,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.41.1, webpack@npm:^5.41.1":
-  version: 5.41.1
-  resolution: "webpack@npm:5.41.1"
+"webpack@npm:5.42.0, webpack@npm:^5.42.0":
+  version: 5.42.0
+  resolution: "webpack@npm:5.42.0"
   dependencies:
     "@types/eslint-scope": ^3.7.0
     "@types/estree": ^0.0.48
     "@webassemblyjs/ast": 1.11.0
     "@webassemblyjs/wasm-edit": 1.11.0
     "@webassemblyjs/wasm-parser": 1.11.0
-    acorn: ^8.2.1
+    acorn: ^8.4.1
     browserslist: ^4.14.5
     chrome-trace-event: ^1.0.2
     enhanced-resolve: ^5.8.0
@@ -8290,7 +8301,7 @@ fsevents@^1.2.7:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: eaefa8e36ecc81a3343204c803489b0e664ba7c56f12599787be7e462f511c5923735f91f8715424e17cf273b956ee549824f733e7dc2d26acd64e4465e86015
+  checksum: 4b2b9a594cf07dda237997d130dc92a6efba96c28f5200c848ea1e8ecbf0632bd314da14f9caac1e1bd90568368bd152d64d45aa5e9f62d408f7fb981c1dabe7
   languageName: node
   linkType: hard
 

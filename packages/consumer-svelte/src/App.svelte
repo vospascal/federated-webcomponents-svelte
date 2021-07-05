@@ -1,4 +1,5 @@
 <script>
+    import Test from "./Test.svelte";
     window['mywc'].get("./my-header").then((module) => module().default);
     window['mywc'].get("./my-footer").then((module) => module().default);
     window['mywc'].get("./my-button").then((module) => module().default);
@@ -27,6 +28,8 @@
 
     let arr = ["1", 3, true]
     let obj = {name: '213'}
+
+    let name = 'i should change'
 </script>
 <my-theme-provider>
     <my-header></my-header>
@@ -56,13 +59,16 @@
                 p={["space.s", "space.m", "space.l"]}
                 width={["100%", "50%", "25%", "12.5%"]}
         >
-            boxed content
+            <Test>boxed content</Test>
         </my-box>
     </my-flex>
 
-    <my-select placeholder="Select option" options={JSON.stringify(options)} on:change={(e)=> console.log(e)}/>
+    <my-select placeholder="Select option"
+               options={JSON.stringify(options)}
+               on:change={(e)=> name = e.detail.value}/>
+    {name}
 
-    <my-button theme="primary" name="test primary">nice button</my-button>
+    <my-button theme="primary" name={`${name}`}>nice button</my-button>
     <my-button theme="secondary" name="test primary">
         <span slot="start"><strong>go</strong></span>
         test
