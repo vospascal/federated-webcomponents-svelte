@@ -11,6 +11,8 @@
     window['mywc'].get("./my-provider").then((module) => module().default);
     window['mywc'].get("./my-consumer").then((module) => module().default);
     window['mywc'].get("./my-theme-provider").then((module) => module().default);
+    window['mywc'].get("./my-accordion").then((module) => module().default);
+    window['mywc'].get("./my-accordion-section").then((module) => module().default);
 
     const clickedIt = (event) => {
         console.log(event, 'clickedIt')
@@ -33,6 +35,27 @@
 </script>
 <my-theme-provider>
     <my-header></my-header>
+
+    <my-accordion  single="true">
+        <my-accordion-section title="Header One" open="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas consequat nisl id pulvinar.
+        </my-accordion-section>
+        <my-accordion-section title="Header Two" >
+            is quis tortor ac sem elementum suscipit eu vitae sapien. Phasellus a pharetra diam, eget porttitor nunc.
+        </my-accordion-section>
+        <my-accordion-section title="Header Thre">
+            Phasellus a pharetra diam, eget porttitor nunc.
+        </my-accordion-section>
+    </my-accordion>
+
+    <my-accordion>
+        <my-accordion-section title="Header One" open="true">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam egestas consequat nisl id pulvinar.
+        </my-accordion-section>
+        <my-accordion-section title="Header Two" open="true">
+            is quis tortor ac sem elementum suscipit eu vitae sapien. Phasellus a pharetra diam, eget porttitor nunc.
+        </my-accordion-section>
+    </my-accordion>
 
     <my-provider>
         <div>

@@ -97,6 +97,7 @@ module.exports = {
             filename: "remoteEntry.js",
             remotes: {},
             exposes: {
+                "./my-theme-provider": "./src/ThemeProvider/ThemeProvider.svelte",
                 "./my-header": "./src/Header.svelte",
                 "./my-footer": "./src/Footer.svelte",
                 "./my-button": "./src/Button/Button.svelte",
@@ -107,7 +108,8 @@ module.exports = {
                 "./my-flex": "./src/Flex.svelte",
                 "./my-provider": "./src/Context/Provider.svelte",
                 "./my-consumer": "./src/Context/Consumer.svelte",
-                "./my-theme-provider": "./src/ThemeProvider/ThemeProvider.svelte",
+                "./my-accordion": "./src/Accordion/Accordion.svelte",
+                "./my-accordion-section": "./src/Accordion/AccordionSection.svelte",
             },
             shared: {},
         }),
