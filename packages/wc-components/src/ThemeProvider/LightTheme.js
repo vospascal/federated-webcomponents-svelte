@@ -1,11 +1,22 @@
 // https://www.colortools.net/color_complementary.html
 
+
+
 let LightTheme = `
     html {
         background:#fff;
         color:#333;
     }
     * {
+        --theme-zindex-dropdown: 1000;
+        --theme-zindex-sticky: 1020;
+        --theme-zindex-fixed: 1030;
+        --theme-zindex-modal-backdrop: 1040;
+        --theme-zindex-offcanvas: 1050;
+        --theme-zindex-modal: 1060;
+        --theme-zindex-popover: 1070;
+        --theme-zindex-tooltip: 1080;
+        
         --theme-bg-primary: #159933;
         --theme-bg-secondary: #016FB7;
         --theme-bg-tertiary: #E75540;

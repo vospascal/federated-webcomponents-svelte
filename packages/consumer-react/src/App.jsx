@@ -77,7 +77,7 @@ function App() {
 
             <my-button
                 theme="primary"
-                name={`${name}`}
+                name="test primary"
                 i-got-a-hyphen={`${name}`}
             >nice button</my-button>
             <my-button theme="secondary" name="test secondary">

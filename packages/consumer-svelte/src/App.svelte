@@ -65,18 +65,23 @@
 
     <my-select placeholder="Select option"
                options={JSON.stringify(options)}
-               on:change={(e)=> name = e.detail.value}/>
+               on:change={(e)=> name = e.detail.value}
+    />
     {name}
 
-    <my-button theme="primary" name={`${name}`}>nice button</my-button>
+    <my-button
+            theme="primary"
+            name="test primary"
+            i-got-a-hyphen={`${name}`}
+    >nice button</my-button>
     <my-button theme="secondary" name="test primary">
         <span slot="start"><strong>go</strong></span>
         test
         <span slot="end"><strong>stop</strong></span>
     </my-button>
 
-    <my-spinner/>
-    <my-spinner theme="secondary"/>
+    <my-spinner />
+    <my-spinner theme="secondary" />
 
     <my-modal closefooter="true" closeheader="true">
         <div slot="trigger">

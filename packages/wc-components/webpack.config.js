@@ -99,7 +99,7 @@ module.exports = {
             exposes: {
                 "./my-header": "./src/Header.svelte",
                 "./my-footer": "./src/Footer.svelte",
-                "./my-button": "./src/Button.svelte",
+                "./my-button": "./src/Button/Button.svelte",
                 "./my-modal": "./src/Modal/Modal.svelte",
                 "./my-spinner": "./src/Spinner.svelte",
                 "./my-select": "./src/Select.svelte",

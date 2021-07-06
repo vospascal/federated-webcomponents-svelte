@@ -65,6 +65,7 @@ module.exports = {
             },
         }),
         new HtmlWebpackPlugin({
+            favicon: "./public/favicon.ico",
             template: "./public/index.html",
             // chunks: ["main"],
         }),

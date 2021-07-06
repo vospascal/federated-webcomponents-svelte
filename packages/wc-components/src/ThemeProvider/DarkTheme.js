@@ -6,6 +6,15 @@ let DarkTheme = `
         color:#fff;
     }
     * {
+        --theme-zindex-dropdown: 1000;
+        --theme-zindex-sticky: 1020;
+        --theme-zindex-fixed: 1030;
+        --theme-zindex-modal-backdrop: 1040;
+        --theme-zindex-offcanvas: 1050;
+        --theme-zindex-modal: 1060;
+        --theme-zindex-popover: 1070;
+        --theme-zindex-tooltip: 1080;
+        
         --theme-bg-primary: #EA66CC;
         --theme-bg-secondary: #FE9048;
         --theme-bg-tertiary: #18AABF;
