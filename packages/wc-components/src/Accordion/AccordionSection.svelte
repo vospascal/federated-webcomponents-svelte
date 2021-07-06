@@ -1,15 +1,13 @@
 <svelte:options tag="my-accordion-section"/>
 <script>
-    import {onMount, createEventDispatcher} from 'svelte';
+    import {onMount} from 'svelte';
     import {get_current_component} from "svelte/internal";
     import {Channel} from "./../Context/channel";
 
     export let title = "";
     export let open = false;
 
-    const svelteDispatch = createEventDispatcher();
     const dispatch = (name, detail) => {
-        svelteDispatch(name, detail);
         component.dispatchEvent && component.dispatchEvent(
             new CustomEvent(name, {
                 detail,
