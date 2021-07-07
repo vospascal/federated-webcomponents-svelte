@@ -13,6 +13,8 @@
     window['mywc'].get("./my-theme-provider").then((module) => module().default);
     window['mywc'].get("./my-accordion").then((module) => module().default);
     window['mywc'].get("./my-accordion-section").then((module) => module().default);
+    window['mywc'].get("./my-tooltip").then((module) => module().default);
+    window['mywc'].get("./my-divider").then((module) => module().default);
 
     const clickedIt = (event) => {
         console.log(event, 'clickedIt')
@@ -35,6 +37,21 @@
 </script>
 <my-theme-provider>
     <my-header></my-header>
+
+    <my-divider>my divider</my-divider>
+    <p>
+        Some text Some text
+        <my-tooltip>
+            <span slot="label"> hover me </span>
+            <span slot="content">
+                        this is content for the tooltip
+                        this is content for the tooltip
+                    </span>
+        </my-tooltip>
+        Even more content here.
+    </p>
+
+    <my-divider />
 
     <my-accordion  single="true">
         <my-accordion-section title="Header One" open="true">

@@ -1,7 +1,8 @@
 <svelte:options tag="my-header" />
 <style>
   :host {
-    display: initial;
+    box-sizing: border-box;
+    display: block;
   }
 
   header {

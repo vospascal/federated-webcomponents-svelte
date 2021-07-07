@@ -23,8 +23,6 @@
         });
     });
 
-    $: console.log(channelData)
-
     channel.cast("consumer");
 </script>
 

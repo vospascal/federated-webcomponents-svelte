@@ -21,8 +21,6 @@
     export let name = '';
     export let theme = 'primary';
 
-    $: console.log(name); //reactive to name
-
     //reactive to name
     // $: { name, handleChange() }
     // function handleChange() {

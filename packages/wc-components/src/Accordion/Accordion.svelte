@@ -1,5 +1,11 @@
 <svelte:options tag="my-accordion"/>
 
+<style>
+    .accordion {
+        list-style: none;
+        padding: 0;
+    }
+</style>
 
 <script context="module">
     let sections = [];
@@ -36,13 +42,7 @@
     }
 </script>
 
-<style>
-    .accordion {
-        list-style: none;
-    }
-</style>
-
-<ul class={`accordion`} on:accordion-event={handleMessage}>
+<ul class="accordion" on:accordion-event={handleMessage}>
     <button on:click={() => closeAll()}>close all</button>
     <slot/>
 </ul>

@@ -1,7 +1,8 @@
 <svelte:options tag="my-footer" />
 <style>
   :host {
-    display: initial;
+    box-sizing: border-box;
+    display: block;
   }
 
   header {

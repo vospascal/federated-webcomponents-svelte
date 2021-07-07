@@ -10,11 +10,13 @@ module.exports = {
     entry: "./src/index",
     cache: false,
 
+    // mode: "production",
     mode: "development",
     devtool: "source-map",
 
     optimization: {
         minimize: false,
+        // minimize: true,
     },
 
     output: {
@@ -110,6 +112,8 @@ module.exports = {
                 "./my-consumer": "./src/Context/Consumer.svelte",
                 "./my-accordion": "./src/Accordion/Accordion.svelte",
                 "./my-accordion-section": "./src/Accordion/AccordionSection.svelte",
+                "./my-tooltip": "./src/Tooltip/Tooltip.svelte",
+                "./my-divider": "./src/Divider/Divider.svelte",
             },
             shared: {},
         }),

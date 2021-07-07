@@ -39,12 +39,19 @@
 
 </script>
 
-<li className={`accordion-section`}>
+<style>
+    .accordion-section{
+        border: 1px solid rgba(0, 0, 0, 0.35);
+        margin-top:5px;
+    }
+
+</style>
+<li class="accordion-section">
     <div on:click={() => send()} style="padding: 5px; background: aliceblue;">
         <strong>{title}</strong>
     </div>
     {#if open}
-        <div>
+        <div style="padding: 5px">
             <slot/>
         </div>
     {/if}
