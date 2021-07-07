@@ -1382,6 +1382,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@popperjs/core@npm:^2.9.2":
+  version: 2.9.2
+  resolution: "@popperjs/core@npm:2.9.2"
+  checksum: cc4de8b46fc190805619224f1c683bee6a162276430af3728d35087099ad83a80da3c11c4eac7cb2b5aa2fa59d4c7c689e211a3e955136588ed6dedb5bff32c5
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:1":
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
@@ -7967,6 +7974,7 @@ fsevents@^1.2.7:
     "@babel/core": ^7.14.6
     "@babel/polyfill": ^7.12.1
     "@babel/preset-env": ^7.14.7
+    "@popperjs/core": ^2.9.2
     babel-loader: ^8.2.2
     cross-env: ^7.0.3
     css-loader: ^5.2.6
