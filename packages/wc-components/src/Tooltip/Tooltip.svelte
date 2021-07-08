@@ -46,15 +46,12 @@
     }
 
     .tooltip-dropdown {
-        /*display: none;*/
-
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
         padding-top: 12px;
-
         width: max-content;
         max-width: 190px;
         text-align: center;
@@ -87,42 +84,6 @@
         border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-    .tooltip [data-popper-placement="bottom"] .tooltip-dropdown__content:after,
-    .tooltip [data-popper-placement="bottom"] .tooltip-dropdown__content:before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: -3px;
-        border-style: solid;
-        border-width: 10px 14px 10px 0;
-        border-color: rgba(0, 0, 0, 0) #ccc rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-        transform: rotate(90deg);
-    }
-
-    .tooltip [data-popper-placement="bottom"] .tooltip-dropdown__content:after {
-        border-width: 9px 14px 9px 0;
-        border-color: rgba(0, 0, 0, 0) #fff rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-        top: 0px;
-    }
-
-    .tooltip [data-popper-placement="top"] .tooltip-dropdown__content:after,
-    .tooltip [data-popper-placement="top"] .tooltip-dropdown__content:before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: -15px;
-        border-style: solid;
-        border-width: 10px 14px 10px 0;
-        border-color: rgba(0, 0, 0, 0) #ccc rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-        transform: rotate(270deg);
-    }
-
-    .tooltip [data-popper-placement="top"] .tooltip-dropdown__content:after {
-        border-width: 9px 14px 9px 0;
-        border-color: rgba(0, 0, 0, 0) #fff rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-        bottom: -13px;
-    }
-
     .tooltip--open .tooltip-dropdown {
         animation: tooltipFadeIn 0.15s;
         display: block;
@@ -150,29 +111,73 @@
         }
     }
 
+    .tooltip [data-popper-placement^='top'] .arrow { bottom: -4px; }
+    .tooltip [data-popper-placement^='top'] .arrow:before { bottom: -1px; }
+
+    .tooltip [data-popper-placement^='bottom'] .arrow { top: 7px; }
+    .tooltip [data-popper-placement^='bottom'] .arrow:before { top: -1px; }
+
+    .tooltip [data-popper-placement^='left'] .arrow { right: -4px; }
+    .tooltip [data-popper-placement^='left'] .arrow:before { right: -1px; }
+
+    .tooltip [data-popper-placement^='right'] .arrow { left: -11px; }
+    .tooltip [data-popper-placement^='right'] .arrow:before { left: 5px; }
+
+    .arrow, .arrow::before, .arrow::after {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+    }
+    .arrow::before {
+        content: "";
+        transform: rotate(45deg);
+        background-color: #ccc;
+        width: 12px;
+        height: 12px;
+    }
+    .arrow::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        transform: rotate(45deg);
+        background-color: #fff;
+    }
+
+
+
 </style>
 <script>
+    import {get_current_component} from "svelte/internal";
     import {createPopper} from '@popperjs/core/lib/popper-lite';
     import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow';
+    import arrow from '@popperjs/core/lib/modifiers/arrow';
     import {onDestroy, tick} from 'svelte'
 
+    export let value = "sd"
     let tooltip;
     let placeholder;
     let dropdown;
     let open = false;
-    let arrowEl;
     let popper;
+    let arrowEl;
 
     $: showDropdown(open)
 
     async function showDropdown(open) {
         if (open) {
             await tick()
+            $: value = `${Math.random()}`;
             popper = createPopper(placeholder, dropdown, {
                 container: 'body',
                 placement: 'top',
                 modifiers: [
                     preventOverflow,
+                    {
+                        ...arrow,
+                        options: {
+                            element: arrowEl
+                        },
+                    },
                 ],
             });
         } else if (popper) {
@@ -185,10 +190,14 @@
         popper && popper.destroy()
     })
 
+    $: { open, handleOpen() }
+    function handleOpen() {
+        get_current_component().setAttribute("open", `${open}`);
+    }
 
 </script>
 
-<div class="tooltip">
+<div class="tooltip popper" ref="popperElement" tabindex="-1">
     <div class="tooltip__label"
          bind:this={placeholder}
          on:touchstart={() => { open = true }}
@@ -201,6 +210,7 @@
     </div>
     {#if open}
         <div class="tooltip-dropdown tooltip--open" bind:this={dropdown}>
+            <div class="arrow" bind:this={arrowEl} data-popper-arrow></div>
             <div role="tooltip" class="tooltip-dropdown__content">
                 {#if $$slots.content}
                     <button class="close" on:click={close}>X</button>
@@ -214,5 +224,7 @@
         </div>
     {/if}
 </div>
+
+
 
 

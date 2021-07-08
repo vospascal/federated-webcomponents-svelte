@@ -114,6 +114,8 @@ module.exports = {
                 "./my-accordion-section": "./src/Accordion/AccordionSection.svelte",
                 "./my-tooltip": "./src/Tooltip/Tooltip.svelte",
                 "./my-divider": "./src/Divider/Divider.svelte",
+                "./my-tabs": "./src/Tabs/Tabs.svelte",
+                "./my-tab": "./src/Tabs/Tab.svelte",
             },
             shared: {},
         }),

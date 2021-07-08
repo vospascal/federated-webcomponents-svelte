@@ -23,6 +23,8 @@ function App() {
         window['mywc'].get("./my-accordion-section").then((module) => module().default);
         window['mywc'].get("./my-tooltip").then((module) => module().default);
         window['mywc'].get("./my-divider").then((module) => module().default);
+        window['mywc'].get("./my-tabs").then((module) => module().default);
+        window['mywc'].get("./my-tab").then((module) => module().default);
     }, [])
 
     const clickedIt = (event) => {
@@ -44,10 +46,12 @@ function App() {
         <my-theme-provider>
             <my-header></my-header>
 
+
+
             <my-divider>my divider</my-divider>
             <p>
                 Some text Some text
-                <my-tooltip>
+                <my-tooltip open="false">
                     <span slot="label"> hover me </span>
                     <span slot="content">
                         this is content for the tooltip
