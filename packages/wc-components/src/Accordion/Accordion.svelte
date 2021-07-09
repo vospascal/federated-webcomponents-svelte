@@ -24,7 +24,7 @@
     onMount(() => { channel.connect(); });
 
     function addOrReplace(sections, detail){
-        return [...sections.filter((obj) => obj.title !== detail.title), {...detail}];
+        return [...sections.filter((obj) => obj.name !== detail.name), {...detail}];
     }
 
     function handleMessage(event) {

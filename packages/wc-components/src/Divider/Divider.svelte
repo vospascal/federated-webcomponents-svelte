@@ -10,7 +10,7 @@
         width: 100%;
         height: 1px;
         border: 0;
-        background-color: rgba(0, 0, 0, 0.35);
+        background-color: var(--theme-divider-bordercolor);
     }
     hr.slotted {
         display: block;
@@ -18,47 +18,41 @@
         width: 100%;
         height: 1px;
         border: 0;
-        background-color: rgba(0, 0, 0, 0.35);
+        background-color: var(--theme-divider-bordercolor);
     }
-    hr.slotted + h2 {
+
+    hr.slotted + div {
         display: inline-block;
         position: relative;
         left: 50%;
         margin: 0;
         padding: 5px 10px;
-        border: 1px solid #453986;
+        border: 1px solid var(--theme-divider-bordercolor);
         transform: translateX(-50%);
-        color: #453986;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 0.32em;
         text-align: center;
         text-transform: uppercase;
-        background-color: #fff;
+        background-color: var(--theme-divider-bgcolor);
     }
-    hr.slotted + h2::first-letter {
-        margin-left: 0.32em;
-    }
-
     /* Alternative transform: translate */
-    hr.slotted + h2 {
+    hr.slotted + div {
         border-width: 1px 0;
     }
-    hr.slotted + h2::before, hr + h2::after {
+    hr.slotted + div::before, hr + div::after {
         display: block;
         position: absolute;
         top: 0;
         bottom: 0;
         width: 1px;
-        background: #453986;
+        background: var(--theme-divider-bordercolor);
         content: "";
     }
-    hr.slotted + h2::before {
+    hr.slotted + div::before {
         left: 0;
     }
-    hr.slotted + h2::after {
+    hr.slotted + div::after {
         right: 0;
     }
+
 
 </style>
 
@@ -69,7 +63,7 @@
 
 {#if $$slots.default}
     <hr class="slotted"/>
-    <h2><slot/></h2>
+    <div><slot/></div>
 {:else}
     <hr class="unslotted"/>
 {/if}

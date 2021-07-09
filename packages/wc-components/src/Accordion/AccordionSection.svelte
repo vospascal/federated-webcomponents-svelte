@@ -5,6 +5,7 @@
     import {Channel} from "./../Context/channel";
 
     export let title = "";
+    export let name = "";
     export let open = false;
 
     const dispatch = (name, detail) => {
@@ -22,19 +23,19 @@
     const channel = new Channel(component, "accordion", true);
 
     function getAccordion (sections) {
-        return {...sections.filter((section) => section.title === title)[0]}
+        return {...sections.filter((section) => section.name === name)[0]}
     }
 
     onMount(async () => {
-        dispatch('accordion-event', {title: title, open: open !== undefined ? JSON.parse(open) : false})
+        dispatch('accordion-event', {name: name, open: open !== undefined ? JSON.parse(open) : false})
     });
 
     channel.connect((sections) => {
-        $: ({title, open} = getAccordion(sections));
+        $: ({name, open} = getAccordion(sections));
     });
 
     function send() {
-        dispatch('accordion-event', {title: title, open: !open});
+        dispatch('accordion-event', {name: name, open: !open});
     }
 
 </script>

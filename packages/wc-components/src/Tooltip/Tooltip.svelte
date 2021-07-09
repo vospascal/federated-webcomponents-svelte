@@ -1,9 +1,3 @@
-<!--https://github.com/wysher/svelte-overlay-->
-<!--https://svelte.dev/repl/3153faf7584d40bd8ddebecf39f24ac1?version=3.38.3-->
-<!--https://svelte.dev/repl/8364bc976f0c4ff9b83adf6e7a3c19fd?version=3.29.4-->
-<!--https://github.com/CrownFramework/svelte-error-boundary-->
-<!--https://microtip.vercel.app/-->
-<!--https://github.com/ghosh/microtip-->
 <svelte:options tag="my-tooltip"/>
 
 <style>
@@ -75,7 +69,6 @@
         border-radius: 6px 6px 0px 0px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
-
 
     .tooltip-dropdown__content .footer {
         background: #f1f1f1;
