@@ -39,7 +39,7 @@
     }
 </script>
 
-<ul class="radio-button-group" on:radio-button-event={handleMessage}>
+<div class="radio-button-group" on:radio-button-event={handleMessage}>
     <button on:click={() => uncheckAll()}>uncheck all</button>
     <slot/>
-</ul>
+</div>

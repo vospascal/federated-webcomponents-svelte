@@ -1,3 +1,51 @@
-https://svelte.dev/repl/8e68120858e5322272dc9136c4bb79cc?version=3.5.1
-https://svelte.dev/repl/b402270eb97146e0a873eeea3bec5ce1?version=3.19.2
-https://svelte.dev/repl/98155b52f0294649b232ed012a4158b2?version=3.38.3
+<svelte:options tag="my-tabs"/>
+
+<script context="module">
+    let sections = [];
+</script>
+
+<script>
+    import {get_current_component} from "svelte/internal";
+    import {Channel} from "./../Context/channel";
+
+    const component = get_current_component();
+    const channel = new Channel(component, "tabs", true);
+    channel.connect();
+
+    function addOrReplace(sections, detail) {
+        return [...sections.filter((obj) => obj.name !== detail.name), {...detail}];
+    }
+
+    function handleMessage(event) {
+        if (sections.filter(item => item.checked) && event.detail.checked) {
+            sections = [...sections.map((item) => {
+                item.checked = false;
+                return item
+            })]
+        }
+        sections = addOrReplace(sections, event.detail);
+
+
+        if(sections.filter(item => item.checked).length === 0){
+            sections[0].checked = true;
+        }
+
+        channel.cast(sections);
+    }
+
+    function uncheckAll() {
+        channel.cast([...sections.map((item) => {
+            item.checked = false;
+            return item
+        })])
+    }
+</script>
+
+<style>
+    :host .tabs {
+
+    }
+</style>
+<div class="tabs" on:tabs-event={handleMessage}>
+    <slot/>
+</div>

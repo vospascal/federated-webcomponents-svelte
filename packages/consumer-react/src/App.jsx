@@ -12,7 +12,6 @@ function App() {
         window['mywc'].get("./my-radio-button").then((module) => module().default);
         window['mywc'].get("./my-accordion").then((module) => module().default);
         window['mywc'].get("./my-accordion-section").then((module) => module().default);
-
         window['mywc'].get("./my-header").then((module) => module().default);
         window['mywc'].get("./my-footer").then((module) => module().default);
         window['mywc'].get("./my-button").then((module) => module().default);
@@ -26,8 +25,6 @@ function App() {
         window['mywc'].get("./my-theme-provider").then((module) => module().default);
         window['mywc'].get("./my-tooltip").then((module) => module().default);
         window['mywc'].get("./my-divider").then((module) => module().default);
-        window['mywc'].get("./my-tabs").then((module) => module().default);
-        window['mywc'].get("./my-tab").then((module) => module().default);
         window['mywc'].get("./my-heading-1").then((module) => module().default);
         window['mywc'].get("./my-heading-2").then((module) => module().default);
         window['mywc'].get("./my-heading-3").then((module) => module().default);
@@ -36,7 +33,13 @@ function App() {
         window['mywc'].get("./my-heading-6").then((module) => module().default);
         window['mywc'].get("./my-switch").then((module) => module().default);
         window['mywc'].get("./my-checkbox").then((module) => module().default);
-    }, [])
+
+        window['mywc'].get("./my-tabs").then((module) => module().default);
+        window['mywc'].get("./my-tab").then((module) => module().default);
+        window['mywc'].get("./my-tab-list").then((module) => module().default);
+        window['mywc'].get("./my-tab-panel").then((module) => module().default);
+
+    }, []);
 
     const clickedIt = (event) => {
         console.log(event, 'clickedIt')
@@ -53,8 +56,30 @@ function App() {
         {name: 'apple pie', value: 'apple_pie'}
     ]
 
+     const tabList = [
+         {name: 'tab_one', text: 'tab panel one', title: 'tab name one'},
+         {name: 'tab_two', text: 'tab panel two', title: 'tab name two'},
+         {name: 'tab_three', text: 'tab panel three', title: 'tab name three'},
+    ]
+
     return (
         <my-theme-provider>
+
+            <my-divider/>
+
+            <my-tabs>
+                <my-tab-list>
+                    <my-tab name="tab_one">tab name one</my-tab>
+                    <my-tab name="tab_two">tab name two</my-tab>
+                    <my-tab name="tab_three">tab name three</my-tab>
+                </my-tab-list>
+                <my-tab-panel name="tab_one">tab panel one</my-tab-panel>
+                <my-tab-panel name="tab_two">tab panel two</my-tab-panel>
+                <my-tab-panel name="tab_three">tab panel three</my-tab-panel>
+            </my-tabs>
+
+            <my-divider/>
+
             <my-radio-button-group>
                 <my-radio-button name="radio_one">radio_one</my-radio-button>
                 <my-radio-button name="radio_two">radio_two</my-radio-button>

@@ -13,6 +13,7 @@
         height: 1em;
         border-radius: 0.25em;
         border: 0.1em solid #2196f3;
+        background: #fff;
     }
 
     .checkbox__control svg {
