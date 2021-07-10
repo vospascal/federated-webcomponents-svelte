@@ -56,12 +56,6 @@ function App() {
         {name: 'apple pie', value: 'apple_pie'}
     ]
 
-     const tabList = [
-         {name: 'tab_one', text: 'tab panel one', title: 'tab name one'},
-         {name: 'tab_two', text: 'tab panel two', title: 'tab name two'},
-         {name: 'tab_three', text: 'tab panel three', title: 'tab name three'},
-    ]
-
     return (
         <my-theme-provider>
 
