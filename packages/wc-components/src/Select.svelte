@@ -20,13 +20,14 @@
 </style>
 
 <script>
-    import {createEventDispatcher} from "svelte";
-    import {get_current_component} from "svelte/internal";
-
     export let theme = 'primary';
+    export let name = '';
     export let value = '';
     export let options = [];
     export let placeholder = '';
+
+    import {createEventDispatcher} from "svelte";
+    import {get_current_component} from "svelte/internal";
 
     const component = get_current_component();
     const svelteDispatch = createEventDispatcher();
@@ -43,12 +44,12 @@
     };
 
     function onChange() {
-        dispatch('change', {value: value});
+        dispatch('change', {name:name, value: value});
     }
 
 </script>
 
-<select bind:value on:change={onChange} theme={theme}>
+<select bind:value on:change={onChange} theme={theme} name={name}>
     {#if placeholder}
         <option value=null selected disabled>{placeholder}</option>
     {/if}

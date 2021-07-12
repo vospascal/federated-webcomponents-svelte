@@ -31,6 +31,12 @@ module.exports = {
         rules: [
             //Allows use of modern javascript
             {
+                test: /\.(woff|woff2)$/,
+                use: {
+                    loader: 'url-loader',
+                },
+            },
+            {
                 test: /\.js?$/,
                 exclude: /node_modules/, //don't test node_modules folder
                 use: {

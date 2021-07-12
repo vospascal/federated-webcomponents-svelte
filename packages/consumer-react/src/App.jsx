@@ -5,39 +5,38 @@ import Test from "./Test";
 
 
 function App() {
-    const [name, setName] = useState('i should change');
-
     useEffect(() => {
-        window['mywc'].get("./my-radio-button-group").then((module) => module().default);
-        window['mywc'].get("./my-radio-button").then((module) => module().default);
-        window['mywc'].get("./my-accordion").then((module) => module().default);
-        window['mywc'].get("./my-accordion-section").then((module) => module().default);
-        window['mywc'].get("./my-header").then((module) => module().default);
-        window['mywc'].get("./my-footer").then((module) => module().default);
-        window['mywc'].get("./my-button").then((module) => module().default);
-        window['mywc'].get("./my-modal").then((module) => module().default);
-        window['mywc'].get("./my-spinner").then((module) => module().default);
-        window['mywc'].get("./my-select").then((module) => module().default);
-        window['mywc'].get("./my-box").then((module) => module().default);
-        window['mywc'].get("./my-flex").then((module) => module().default);
-        window['mywc'].get("./my-provider").then((module) => module().default);
-        window['mywc'].get("./my-consumer").then((module) => module().default);
-        window['mywc'].get("./my-theme-provider").then((module) => module().default);
-        window['mywc'].get("./my-tooltip").then((module) => module().default);
-        window['mywc'].get("./my-divider").then((module) => module().default);
-        window['mywc'].get("./my-heading-1").then((module) => module().default);
-        window['mywc'].get("./my-heading-2").then((module) => module().default);
-        window['mywc'].get("./my-heading-3").then((module) => module().default);
-        window['mywc'].get("./my-heading-4").then((module) => module().default);
-        window['mywc'].get("./my-heading-5").then((module) => module().default);
-        window['mywc'].get("./my-heading-6").then((module) => module().default);
-        window['mywc'].get("./my-switch").then((module) => module().default);
-        window['mywc'].get("./my-checkbox").then((module) => module().default);
+        import('mywc/my-radio-button-group');
+        import('mywc/my-accordion');
+        import('mywc/my-accordion-section');
+        import('mywc/my-header');
+        import('mywc/my-footer');
+        import('mywc/my-button');
+        import('mywc/my-modal');
+        import('mywc/my-spinner');
+        import('mywc/my-select');
+        import('mywc/my-box');
+        import('mywc/my-flex');
+        import('mywc/my-provider');
+        import('mywc/my-consumer');
+        import('mywc/my-theme-provider');
+        import('mywc/my-tooltip');
+        import('mywc/my-divider');
+        import('mywc/my-heading-1');
+        import('mywc/my-heading-2');
+        import('mywc/my-heading-3');
+        import('mywc/my-heading-4');
+        import('mywc/my-heading-5');
+        import('mywc/my-heading-6');
+        import('mywc/my-switch');
+        import('mywc/my-checkbox');
+        import('mywc/my-tabs');
+        import('mywc/my-tab');
+        import('mywc/my-tab-list');
+        import('mywc/my-tab-panel');
+        import('mywc/my-radio-button');
 
-        window['mywc'].get("./my-tabs").then((module) => module().default);
-        window['mywc'].get("./my-tab").then((module) => module().default);
-        window['mywc'].get("./my-tab-list").then((module) => module().default);
-        window['mywc'].get("./my-tab-panel").then((module) => module().default);
+        import('mywc/my-tab-panel');
 
     }, []);
 
@@ -60,6 +59,18 @@ function App() {
         <my-theme-provider>
 
             <my-divider/>
+            <my-select placeholder="Select option" name="my-select" options={JSON.stringify(options)}  onEventChange={(e) => console.log(e, 'my-select')} />
+
+            <my-divider/>
+
+            <my-button  theme="primary"  name="test primary"  i-got-a-hyphen="test">nice button</my-button>
+            <my-button theme="secondary" name="test secondary">
+                <span slot="start"><strong>go</strong></span>
+                test
+                <span slot="end"><strong>stop</strong></span>
+            </my-button>
+
+            <my-divider/>
 
             <my-tabs>
                 <my-tab-list>
@@ -74,26 +85,32 @@ function App() {
 
             <my-divider/>
 
-            <my-radio-button-group>
-                <my-radio-button name="radio_one">radio_one</my-radio-button>
-                <my-radio-button name="radio_two">radio_two</my-radio-button>
-                <my-radio-button name="radio_three">radio_three</my-radio-button>
+            <my-radio-button-group name="radio_button" onEventChange={(e) => console.log(e, 'my-radio-button-group')}>
+                <my-radio-button value="radio_one" checked="checked">radio_one</my-radio-button>
+                <my-radio-button value="radio_two">radio_two</my-radio-button>
+                <my-radio-button value="radio_three">radio_three</my-radio-button>
             </my-radio-button-group>
 
             <my-divider/>
 
-            <my-switch />
-            <my-switch checked="checked" />
-            <my-switch disabled="disabled" />
-            <my-switch checked="checked" disabled="disabled" />
+            <my-switch name="switch_zero" value="switch_zero" onEventChange={(e) => console.log(e, 'my-switch')}/>
+            <my-switch checked="checked" onEventChange={(e) => console.log(e, 'my-switch')}/>
+            <my-switch disabled="disabled" onEventChange={(e) => console.log(e, 'my-switch')}/>
+            <my-switch checked="checked" disabled="disabled" onEventChange={(e) => console.log(e, 'my-switch')}/>
 
 
             <my-divider/>
 
-            <my-checkbox />
-            <my-checkbox checked="checked" />
-            <my-checkbox disabled="disabled" />
-            <my-checkbox checked="checked" disabled="disabled" />
+            <my-checkbox name="checkbox_zero" value="checkbox_zero" onEventChange={(e) => console.log(e, 'my-checkbox')}/>
+            <my-checkbox name="checkbox_one" value="checkbox_one" checked="checked" onEventChange={(e) => console.log(e, 'my-checkbox')}>
+                checkbox_one
+            </my-checkbox>
+            <my-checkbox name="checkbox_two" value="checkbox_two" disabled="disabled" onEventChange={(e) => console.log(e, 'my-checkbox')}>
+                checkbox_two
+            </my-checkbox>
+            <my-checkbox name="checkbox_three" value="checkbox_three" checked="checked" disabled="disabled" onEventChange={(e) => console.log(e, 'my-checkbox')}>
+                checkbox_three
+            </my-checkbox>
 
             <my-divider/>
 
@@ -219,24 +236,6 @@ function App() {
                     <Test>boxed content</Test>
                 </my-box>
             </my-flex>
-
-            <my-select placeholder="Select option"
-                       options={JSON.stringify(options)}
-                       onEventChange={(e) => setName(e.detail.value)}
-            />
-            {name}
-
-            <my-button
-                theme="primary"
-                name="test primary"
-                i-got-a-hyphen={`${name}`}
-            >nice button
-            </my-button>
-            <my-button theme="secondary" name="test secondary">
-                <span slot="start"><strong>go</strong></span>
-                test
-                <span slot="end"><strong>stop</strong></span>
-            </my-button>
 
             <my-spinner/>
             <my-spinner theme="secondary"/>

@@ -1,6 +1,15 @@
+import OpenSansRegular from './fonts/OpenSans-Regular.woff2';
+
+
 let Theme = `
+    @font-face {
+      font-family: 'OpenSans';
+      src: url('${OpenSansRegular}') format('woff2');
+      font-display: swap;
+    }
+
     html {
-        font-family: Helvetica Neue,sans-serif;
+        font-family: OpenSans;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;

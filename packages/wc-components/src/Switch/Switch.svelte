@@ -38,7 +38,7 @@
         height: 20px;
         width: 20px;
         left: 0px;
-        bottom: -2px;
+        bottom: 0px;
         background-color: white;
         -webkit-transition: 0.4s;
         transition: 0.4s;
@@ -77,32 +77,55 @@
 <script>
     export let checked = false;
     export let disabled = false;
+    export let value = "";
+    export let name = "";
+
+    import {createEventDispatcher} from "svelte";
     import {get_current_component} from "svelte/internal";
 
-    $: {
-        checked, handleOpen()
+    const component = get_current_component();
+    const svelteDispatch = createEventDispatcher();
+
+    const dispatch = (name, detail) => {
+      svelteDispatch(name, detail);
+      component.dispatchEvent && component.dispatchEvent(
+              new CustomEvent(name, {
+                detail,
+                cancelable: true,
+                bubbles: true,
+                composed: true,
+              })
+      );
+    };
+
+    function onChange() {
+      dispatch('change', {value: value, name: name, checked: checked ? true : false});
     }
 
+    $: {checked, handleOpen()}
+
     function handleOpen() {
-        get_current_component().setAttribute("aria-pressed", `${checked ? true : false}`);
+        component.setAttribute("aria-pressed", `${checked ? true : false}`);
         if (checked) {
-            get_current_component().setAttribute("checked", 'checked');
-            get_current_component().setAttribute("active", 'active');
+            component.setAttribute("checked", 'checked');
+            component.setAttribute("active", 'active');
         } else {
-            get_current_component().removeAttribute("checked");
-            get_current_component().removeAttribute("active");
+            component.removeAttribute("checked");
+            component.removeAttribute("active");
         }
     }
 </script>
 
-
 <label class="container">
     <span class="switch"></span>
-    <input type="checkbox" bind:checked disabled={disabled}/>
+    <input type="checkbox" name={name} bind:checked disabled={disabled} on:change|preventDefault={onChange}/>
     <span class="slider">
 <!--      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true" focusable="false">-->
 <!--        <path fill='none' stroke='currentColor' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59'/>-->
 <!--      </svg>-->
     </span>
 </label>
+
+
+
 

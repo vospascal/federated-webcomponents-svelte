@@ -1,35 +1,34 @@
 <script>
     import Test from "./Test.svelte";
-    window['mywc'].get("./my-radio-button-group").then((module) => module().default);
-    window['mywc'].get("./my-radio-button").then((module) => module().default);
-    window['mywc'].get("./my-accordion").then((module) => module().default);
-    window['mywc'].get("./my-accordion-section").then((module) => module().default);
-    window['mywc'].get("./my-header").then((module) => module().default);
-    window['mywc'].get("./my-footer").then((module) => module().default);
-    window['mywc'].get("./my-button").then((module) => module().default);
-    window['mywc'].get("./my-modal").then((module) => module().default);
-    window['mywc'].get("./my-spinner").then((module) => module().default);
-    window['mywc'].get("./my-select").then((module) => module().default);
-    window['mywc'].get("./my-box").then((module) => module().default);
-    window['mywc'].get("./my-flex").then((module) => module().default);
-    window['mywc'].get("./my-provider").then((module) => module().default);
-    window['mywc'].get("./my-consumer").then((module) => module().default);
-    window['mywc'].get("./my-theme-provider").then((module) => module().default);
-    window['mywc'].get("./my-tooltip").then((module) => module().default);
-    window['mywc'].get("./my-divider").then((module) => module().default);
-    window['mywc'].get("./my-heading-1").then((module) => module().default);
-    window['mywc'].get("./my-heading-2").then((module) => module().default);
-    window['mywc'].get("./my-heading-3").then((module) => module().default);
-    window['mywc'].get("./my-heading-4").then((module) => module().default);
-    window['mywc'].get("./my-heading-5").then((module) => module().default);
-    window['mywc'].get("./my-heading-6").then((module) => module().default);
-    window['mywc'].get("./my-switch").then((module) => module().default);
-    window['mywc'].get("./my-checkbox").then((module) => module().default);
-
-    window['mywc'].get("./my-tabs").then((module) => module().default);
-    window['mywc'].get("./my-tab").then((module) => module().default);
-    window['mywc'].get("./my-tab-list").then((module) => module().default);
-    window['mywc'].get("./my-tab-panel").then((module) => module().default);
+    import('mywc/my-radio-button-group');
+    import('mywc/my-radio-button');
+    import('mywc/my-accordion');
+    import('mywc/my-accordion-section');
+    import('mywc/my-header');
+    import('mywc/my-footer');
+    import('mywc/my-button');
+    import('mywc/my-modal');
+    import('mywc/my-spinner');
+    import('mywc/my-select');
+    import('mywc/my-box');
+    import('mywc/my-flex');
+    import('mywc/my-provider');
+    import('mywc/my-consumer');
+    import('mywc/my-theme-provider');
+    import('mywc/my-tooltip');
+    import('mywc/my-divider');
+    import('mywc/my-heading-1');
+    import('mywc/my-heading-2');
+    import('mywc/my-heading-3');
+    import('mywc/my-heading-4');
+    import('mywc/my-heading-5');
+    import('mywc/my-heading-6');
+    import('mywc/my-switch');
+    import('mywc/my-checkbox');
+    import('mywc/my-tabs');
+    import('mywc/my-tab');
+    import('mywc/my-tab-list');
+    import('mywc/my-tab-panel');
 
     const clickedIt = (event) => {
         console.log(event, 'clickedIt')
