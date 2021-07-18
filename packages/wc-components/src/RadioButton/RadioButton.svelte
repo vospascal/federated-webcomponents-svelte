@@ -67,19 +67,32 @@
 
 </script>
 <style>
+    :host {
+        display: inline-block;
+        margin:0 5px;
+    }
     .radio {
         cursor: pointer;
         white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        -webkit-box-align: center;
     }
     .radio.disabled {
         cursor: not-allowed;
     }
-    .radio__label {}
+    .radio__label {
+        display: flex;
+        margin-left:5px;
+    }
+
+    .radio__input{
+        display: flex;
+    }
 
     .radio__input input {
         opacity: 0;
-        width: 0;
-        height: 0;
+        position: absolute;
     }
     .radio__input input :focus + .radio__control {
          box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em #2196f3;

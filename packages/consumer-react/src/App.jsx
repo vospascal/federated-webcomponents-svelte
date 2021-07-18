@@ -63,12 +63,13 @@ function App() {
 
             <my-divider/>
 
-            <my-button  theme="primary"  name="test primary"  i-got-a-hyphen="test">nice button</my-button>
+            <my-button  theme="primary"  name="test primary">nice button</my-button>
             <my-button theme="secondary" name="test secondary">
                 <span slot="start"><strong>go</strong></span>
                 test
                 <span slot="end"><strong>stop</strong></span>
             </my-button>
+            <my-button  theme="primary" compact name="test primary">nice button</my-button>
 
             <my-divider/>
 

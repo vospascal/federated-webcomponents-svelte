@@ -4,7 +4,7 @@
 
 let LightTheme = `
     html {
-        background:#FAFBFC;
+        background:#f4fafd;
         color:#121212;
     }
     

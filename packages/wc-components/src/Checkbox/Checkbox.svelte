@@ -2,16 +2,28 @@
 
 
 <style>
+    :host {
+      display: inline-block;
+      margin:0 5px;
+    }
+
+    .radio__label{
+      display: flex;
+      margin-left:5px;
+    }
+
     .checkbox {
       cursor: pointer;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      -webkit-box-align: center;
     }
     .checkbox.disabled {
       cursor: not-allowed;
     }
 
     .checkbox__control {
-        display: inline-grid;
         width: 16px;
         height: 16px;
         border-radius: 0.25em;
@@ -24,6 +36,7 @@
     }
 
     .checkbox__input {
+        display: flex;
         color: #2196f3;
     }
 
@@ -32,8 +45,7 @@
 
     .checkbox__input input {
         opacity: 0;
-        width: 1em;
-        height: 1em;
+        position: absolute;
     }
 
     .checkbox__input input:focus + .checkbox__control {
@@ -102,11 +114,12 @@
       </svg>
     </span>
   </span>
-  <span class="radio__label">
-    {#if $$slots.default}
-        <slot/>
-    {/if}
-  </span>
+
+  {#if $$slots.default}
+    <span class="radio__label">
+      <slot/>
+    </span>
+  {/if}
 </label>
 
 

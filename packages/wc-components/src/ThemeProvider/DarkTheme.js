@@ -2,7 +2,7 @@
 
 let DarkTheme = `
     html {
-        background:#121212;
+        background:#2e3538;
         color:#FAFBFC;
     }
     
