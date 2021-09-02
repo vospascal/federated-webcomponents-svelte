@@ -11,6 +11,7 @@
 - run all builds -> `yarn workspaces foreach run build`
 - install interactive tools -> `yarn plugin import interactive-tools`
 - to see if all packages are up to date -> `yarn upgrade-interactive`
+- `yarn why fsevents` shows where its been used
 
 ### remarks
 used injector code from -> `https://github.com/react-boilerplate/redux-injectors`
